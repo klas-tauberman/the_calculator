@@ -122,7 +122,7 @@ export default function BakersCalculator() {
                 </svg>
               </div>
               <div>
-                <h1 className="text-2xl font-semibold">Baker's Percentage Calculator</h1>
+                <h1 className="text-2xl font-semibold">Baker&apos;s Percentage Calculator</h1>
                 <p className="text-muted-foreground">Start easy, go for a hydration around 72%.</p>
               </div>
             </div>
@@ -214,12 +214,11 @@ export default function BakersCalculator() {
               </svg>
             </div>
             <div>
-              <h1 className="text-2xl font-semibold">Baker's Percentage Calculator</h1>
+              <h1 className="text-2xl font-semibold">Baker&apos;s Percentage Calculator</h1>
               <p className="text-muted-foreground">Start easy, go for a hydration around 72%.</p>
             </div>
           </div>
         </div>
-
         <div className="space-y-8 mt-8">
           {ingredients.map((ingredient) => (
             <div key={ingredient.id} className="space-y-4">
@@ -309,3 +308,4 @@ export default function BakersCalculator() {
     </div>
   )
 }
+
