@@ -8,6 +8,8 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import Image from 'next/image'
 
+const APP_VERSION = '1.0.2'; // Cache-busting version
+
 interface Ingredient {
   id: string
   name: string
@@ -105,13 +107,13 @@ export default function BakersCalculator() {
         <Card>
           <CardHeader className="space-y-2">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center shrink-0 overflow-hidden p-0">
+              <div className="w-14 h-14 bg-slate-900 rounded-lg flex items-center justify-center shrink-0">
                 <Image
-                  src="/new-bakers-logo.svg"
+                  src="/bakers-logo.svg?v=1"
                   alt="Baker's Calculator Logo"
                   width={56}
                   height={56}
-                  className="w-full h-full"
+                  className="w-14 h-14"
                 />
               </div>
               <div>
@@ -119,6 +121,7 @@ export default function BakersCalculator() {
                 <p className="text-muted-foreground">Start easy, go for a hydration around 72%.</p>
               </div>
             </div>
+            <div className="text-xs text-muted-foreground">Version: {APP_VERSION}</div>
           </CardHeader>
           <CardContent>
             <div className="space-y-8">
@@ -134,6 +137,7 @@ export default function BakersCalculator() {
                     <div key={ingredient.id} className="grid grid-cols-[2fr,1fr,1fr,auto] gap-4 items-center">
                       {ingredient.isCustom ? (
                         <Input
+                          className="text-base"
                           placeholder="0"
                           value={ingredient.name || "0"}
                           onChange={(e) => updateIngredient(ingredient.id, "name", e.target.value)}
@@ -142,11 +146,13 @@ export default function BakersCalculator() {
                         <div className="py-2">{ingredient.name}</div>
                       )}
                       <Input
+                        className="text-base"
                         type="number"
                         value={ingredient.weight || "0"}
                         onChange={(e) => updateIngredient(ingredient.id, "weight", e.target.value)}
                       />
                       <Input
+                        className="text-base"
                         type="number"
                         value={ingredient.percentage || "0"}
                         onChange={(e) => updateIngredient(ingredient.id, "percentage", e.target.value)}
@@ -188,14 +194,14 @@ export default function BakersCalculator() {
       {/* Mobile View */}
       <div className="md:hidden m-4">
         <div className="space-y-2">
-          <div className="flex items-center gap-4">
-            <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center shrink-0 overflow-hidden p-0">
+          <div className="flex items-start gap-4 pt-1">
+            <div className="w-14 h-14 bg-slate-900 rounded-lg flex items-center justify-center shrink-0">
               <Image
-                src="/new-bakers-logo.svg"
+                src="/bakers-logo.svg?v=1"
                 alt="Baker's Calculator Logo"
                 width={56}
                 height={56}
-                className="w-full h-full"
+                className="w-14 h-14"
               />
             </div>
             <div>
@@ -203,8 +209,9 @@ export default function BakersCalculator() {
               <p className="text-muted-foreground">Start easy, go for a hydration around 72%.</p>
             </div>
           </div>
+          <div className="text-xs text-muted-foreground">Version: {APP_VERSION}</div>
         </div>
-        <div className="space-y-8 mt-8">
+        <div className="space-y-4 mt-8">
           {ingredients.map((ingredient) => (
             <div key={ingredient.id} className="space-y-4">
               {ingredient.isCustom ? (
@@ -214,6 +221,7 @@ export default function BakersCalculator() {
                     <div className="space-y-2">
                       <Label>Name</Label>
                       <Input
+                        className="text-base"
                         value={ingredient.name || "0"}
                         onChange={(e) => updateIngredient(ingredient.id, "name", e.target.value)}
                       />
@@ -221,6 +229,7 @@ export default function BakersCalculator() {
                     <div className="space-y-2">
                       <Label>Weight (g)</Label>
                       <Input
+                        className="text-base"
                         type="number"
                         value={ingredient.weight || "0"}
                         onChange={(e) => updateIngredient(ingredient.id, "weight", e.target.value)}
@@ -229,6 +238,7 @@ export default function BakersCalculator() {
                     <div className="space-y-2">
                       <Label>Percentage (%)</Label>
                       <Input
+                        className="text-base"
                         type="number"
                         value={ingredient.percentage || "0"}
                         onChange={(e) => updateIngredient(ingredient.id, "percentage", e.target.value)}
@@ -251,6 +261,7 @@ export default function BakersCalculator() {
                     <div className="space-y-2">
                       <Label>Weight (g)</Label>
                       <Input
+                        className="text-base"
                         type="number"
                         value={ingredient.weight || "0"}
                         onChange={(e) => updateIngredient(ingredient.id, "weight", e.target.value)}
@@ -259,6 +270,7 @@ export default function BakersCalculator() {
                     <div className="space-y-2">
                       <Label>Percentage (%)</Label>
                       <Input
+                        className="text-base"
                         type="number"
                         value={ingredient.percentage || "0"}
                         onChange={(e) => updateIngredient(ingredient.id, "percentage", e.target.value)}
