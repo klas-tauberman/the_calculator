@@ -27,6 +27,10 @@ export default function BakersCalculator() {
     { id: "starter", name: "Sourdough starter", weight: 0, percentage: 0 },
   ])
 
+  const handleFocus = (event: React.FocusEvent<HTMLInputElement>) => {
+    event.target.select();
+  };
+
   const calculateWeightsAndPercentages = (ingredients: Ingredient[]) => {
     const flour = ingredients.find((i) => i.id === "flour")
     if (!flour) return ingredients
@@ -150,12 +154,14 @@ export default function BakersCalculator() {
                         type="number"
                         value={ingredient.weight || "0"}
                         onChange={(e) => updateIngredient(ingredient.id, "weight", e.target.value)}
+                        onFocus={handleFocus}
                       />
                       <Input
                         className="text-base"
                         type="number"
                         value={ingredient.percentage || "0"}
                         onChange={(e) => updateIngredient(ingredient.id, "percentage", e.target.value)}
+                        onFocus={handleFocus}
                         disabled={ingredient.isBase}
                       />
                       {ingredient.isCustom && (
@@ -233,6 +239,7 @@ export default function BakersCalculator() {
                         type="number"
                         value={ingredient.weight || "0"}
                         onChange={(e) => updateIngredient(ingredient.id, "weight", e.target.value)}
+                        onFocus={handleFocus}
                       />
                     </div>
                     <div className="space-y-2">
@@ -242,6 +249,7 @@ export default function BakersCalculator() {
                         type="number"
                         value={ingredient.percentage || "0"}
                         onChange={(e) => updateIngredient(ingredient.id, "percentage", e.target.value)}
+                        onFocus={handleFocus}
                       />
                     </div>
                   </div>
@@ -265,6 +273,7 @@ export default function BakersCalculator() {
                         type="number"
                         value={ingredient.weight || "0"}
                         onChange={(e) => updateIngredient(ingredient.id, "weight", e.target.value)}
+                        onFocus={handleFocus}
                       />
                     </div>
                     <div className="space-y-2">
@@ -274,6 +283,7 @@ export default function BakersCalculator() {
                         type="number"
                         value={ingredient.percentage || "0"}
                         onChange={(e) => updateIngredient(ingredient.id, "percentage", e.target.value)}
+                        onFocus={handleFocus}
                         disabled={ingredient.isBase}
                       />
                     </div>
