@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
+import Image from 'next/image'
 
 interface Ingredient {
   id: string
@@ -104,22 +105,14 @@ export default function BakersCalculator() {
         <Card>
           <CardHeader className="space-y-2">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0">
-                <svg
-                  className="w-6 h-6 text-primary-foreground"
-                  fill="none"
-                  height="24"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  width="24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M3 2v7c0 2.5 5 5 10 5s10-2.5 10-5V2" />
-                  <path d="M3 9v7c0 2.5 5 5 10 5s10-2.5 10-5V9" />
-                </svg>
+              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0 overflow-hidden p-2">
+                <Image
+                  src="/bakers-logo.svg"
+                  alt="Baker's Calculator Logo"
+                  width={48}
+                  height={48}
+                  className="w-full h-full"
+                />
               </div>
               <div>
                 <h1 className="text-2xl font-semibold">Baker&apos;s Percentage Calculator</h1>
@@ -196,22 +189,14 @@ export default function BakersCalculator() {
       <div className="md:hidden m-4">
         <div className="space-y-2">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0">
-              <svg
-                className="w-6 h-6 text-primary-foreground"
-                fill="none"
-                height="24"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                width="24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M3 2v7c0 2.5 5 5 10 5s10-2.5 10-5V2" />
-                <path d="M3 9v7c0 2.5 5 5 10 5s10-2.5 10-5V9" />
-              </svg>
+            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0 overflow-hidden p-2">
+              <Image
+                src="/bakers-logo.svg"
+                alt="Baker's Calculator Logo"
+                width={48}
+                height={48}
+                className="w-full h-full"
+              />
             </div>
             <div>
               <h1 className="text-2xl font-semibold">Baker&apos;s Percentage Calculator</h1>
