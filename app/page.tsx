@@ -105,12 +105,12 @@ export default function BakersCalculator() {
         <Card>
           <CardHeader className="space-y-2">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0 overflow-hidden p-2">
+              <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center shrink-0 overflow-hidden p-0">
                 <Image
-                  src="/bakers-logo.svg"
+                  src="/new-bakers-logo.svg"
                   alt="Baker's Calculator Logo"
-                  width={48}
-                  height={48}
+                  width={56}
+                  height={56}
                   className="w-full h-full"
                 />
               </div>
@@ -189,12 +189,12 @@ export default function BakersCalculator() {
       <div className="md:hidden m-4">
         <div className="space-y-2">
           <div className="flex items-center gap-4">
-            <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center shrink-0 overflow-hidden p-2">
+            <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center shrink-0 overflow-hidden p-0">
               <Image
-                src="/bakers-logo.svg"
+                src="/new-bakers-logo.svg"
                 alt="Baker's Calculator Logo"
-                width={48}
-                height={48}
+                width={56}
+                height={56}
                 className="w-full h-full"
               />
             </div>
