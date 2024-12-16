@@ -116,122 +116,127 @@ export default function BakersCalculator() {
   return (
     <div className="w-full max-w-2xl mx-auto">
       {/* Desktop View */}
-      <div className="hidden md:block min-h-screen bg-[url('/calculator_bg-2.webp')] bg-cover bg-center bg-gray-200 p-8">
-        <div className="max-w-xl mx-auto bg-[#F1E2C7] rounded-3xl shadow-xl overflow-hidden">
-          {/* Header */}
-          <div className="px-4 py-3 flex items-center gap-2">
-            <div className="w-6 h-6 bg-black rounded-lg flex items-center justify-center">
-              <Plus className="w-4 h-4 text-white" />
-            </div>
-            <h1 className="text-xl font-medium">Baker&apos;s percentage calculator</h1>
-          </div>
+      <div className="hidden md:block">
+        <div className="fixed inset-0 bg-[url('/calculator_bg-2.webp')] bg-cover bg-center bg-no-repeat" />
+        <div className="relative min-h-screen flex items-center justify-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+          <div className="w-full max-w-xl mx-auto p-8">
+            <div className="bg-[#F1E2C7] rounded-3xl shadow-xl overflow-hidden">
+              {/* Header */}
+              <div className="px-4 py-3 flex items-center gap-2">
+                <div className="w-6 h-6 bg-black rounded-lg flex items-center justify-center">
+                  <Plus className="w-4 h-4 text-white" />
+                </div>
+                <h1 className="text-xl font-medium">Baker&apos;s percentage calculator</h1>
+              </div>
 
-          {/* Ingredients List */}
-          <div className="px-4 space-y-[1px]">
-            {ingredients.map((ingredient) => (
-              <Card key={ingredient.id} className="p-0 rounded-xl bg-white border-0">
-                {ingredient.isCustom ? (
-                  <div className="flex gap-2">
-                    <div className="flex-1 p-3">
-                      <div>
-                        <div className="mb-3">
-                          <div className="text-base mb-0.5">Ingredient name</div>
-                          <Input
-                            type="text"
-                            placeholder="Add name"
-                            value={ingredient.name}
-                            onChange={(e) => updateIngredient(ingredient.id, "name", e.target.value)}
-                            className="text-4xl h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium placeholder:text-gray-300"
-                          />
-                        </div>
-                        <div className="border-b border-gray-200 my-3"></div>
-                        <div className="grid grid-cols-[1fr,6px,1fr] gap-0">
+              {/* Ingredients List */}
+              <div className="px-4 space-y-[1px]">
+                {ingredients.map((ingredient) => (
+                  <Card key={ingredient.id} className="p-0 rounded-xl bg-white border-0">
+                    {ingredient.isCustom ? (
+                      <div className="flex gap-2">
+                        <div className="flex-1 p-3">
                           <div>
-                            <div className="text-base mb-0.5">Weight (g)</div>
-                            <Input
-                              type="number"
-                              value={ingredient.weight || "0"}
-                              onChange={(e) => updateIngredient(ingredient.id, "weight", e.target.value)}
-                              onFocus={handleFocus}
-                              className="text-4xl h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium"
-                            />
+                            <div className="mb-3">
+                              <div className="text-base mb-0.5">Ingredient name</div>
+                              <Input
+                                type="text"
+                                placeholder="Add name"
+                                value={ingredient.name}
+                                onChange={(e) => updateIngredient(ingredient.id, "name", e.target.value)}
+                                className="text-4xl h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium placeholder:text-gray-300"
+                              />
+                            </div>
+                            <div className="border-b border-gray-200 my-3"></div>
+                            <div className="grid grid-cols-[1fr,6px,1fr] gap-0">
+                              <div>
+                                <div className="text-base mb-0.5">Weight (g)</div>
+                                <Input
+                                  type="number"
+                                  value={ingredient.weight || "0"}
+                                  onChange={(e) => updateIngredient(ingredient.id, "weight", e.target.value)}
+                                  onFocus={handleFocus}
+                                  className="text-4xl h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium"
+                                />
+                              </div>
+                              <div className="w-px bg-gray-200 h-full" aria-hidden="true"></div>
+                              <div className="pl-1.5">
+                                <div className="text-base mb-0.5">Percentage (%)</div>
+                                <Input
+                                  type="number"
+                                  value={ingredient.percentage || "0"}
+                                  onChange={(e) => updateIngredient(ingredient.id, "percentage", e.target.value)}
+                                  onFocus={handleFocus}
+                                  className="text-4xl h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium"
+                                />
+                              </div>
+                            </div>
                           </div>
-                          <div className="w-px bg-gray-200 h-full" aria-hidden="true"></div>
-                          <div className="pl-1.5">
-                            <div className="text-base mb-0.5">Percentage (%)</div>
-                            <Input
-                              type="number"
-                              value={ingredient.percentage || "0"}
-                              onChange={(e) => updateIngredient(ingredient.id, "percentage", e.target.value)}
-                              onFocus={handleFocus}
-                              className="text-4xl h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium"
-                            />
-                          </div>
+                        </div>
+                        <div className="w-12 bg-white rounded-xl flex items-stretch">
+                          <Button
+                            variant="ghost"
+                            onClick={() => removeIngredient(ingredient.id)}
+                            className="w-full h-full rounded-xl hover:bg-transparent p-1"
+                          >
+                            <Trash2 className="h-[26px] w-[26px] text-gray-400" />
+                          </Button>
                         </div>
                       </div>
-                    </div>
-                    <div className="w-12 bg-white rounded-xl flex items-stretch">
-                      <Button
-                        variant="ghost"
-                        onClick={() => removeIngredient(ingredient.id)}
-                        className="w-full h-full rounded-xl hover:bg-transparent p-1"
-                      >
-                        <Trash2 className="h-[26px] w-[26px] text-gray-400" />
-                      </Button>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="grid grid-cols-[1fr,6px,1fr] gap-0 relative p-3">
-                    <div>
-                      <div className="text-base mb-0.5">{ingredient.name} (g)</div>
-                      <Input
-                        type="number"
-                        value={ingredient.weight || "0"}
-                        onChange={(e) => updateIngredient(ingredient.id, "weight", e.target.value)}
-                        onFocus={handleFocus}
-                        className="text-4xl h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium"
-                      />
-                    </div>
-                    <div className="w-px bg-gray-200 h-full" aria-hidden="true"></div>
-                    <div className="pl-1.5">
-                      <div className="text-base mb-0.5">Percentage (%)</div>
-                      <Input
-                        type="number"
-                        value={ingredient.percentage || "0"}
-                        onChange={(e) => updateIngredient(ingredient.id, "percentage", e.target.value)}
-                        onFocus={handleFocus}
-                        disabled={ingredient.isBase}
-                        className={`text-4xl h-auto py-0.5 px-0 border-none focus-visible:ring-0 ${
-                          ingredient.isBase ? "text-gray-400" : "font-medium"
-                        }`}
-                      />
-                    </div>
-                  </div>
-                )}
-              </Card>
-            ))}
-          </div>
+                    ) : (
+                      <div className="grid grid-cols-[1fr,6px,1fr] gap-0 relative p-3">
+                        <div>
+                          <div className="text-base mb-0.5">{ingredient.name} (g)</div>
+                          <Input
+                            type="number"
+                            value={ingredient.weight || "0"}
+                            onChange={(e) => updateIngredient(ingredient.id, "weight", e.target.value)}
+                            onFocus={handleFocus}
+                            className="text-4xl h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium"
+                          />
+                        </div>
+                        <div className="w-px bg-gray-200 h-full" aria-hidden="true"></div>
+                        <div className="pl-1.5">
+                          <div className="text-base mb-0.5">Percentage (%)</div>
+                          <Input
+                            type="number"
+                            value={ingredient.percentage || "0"}
+                            onChange={(e) => updateIngredient(ingredient.id, "percentage", e.target.value)}
+                            onFocus={handleFocus}
+                            disabled={ingredient.isBase}
+                            className={`text-4xl h-auto py-0.5 px-0 border-none focus-visible:ring-0 ${
+                              ingredient.isBase ? "text-gray-400" : "font-medium"
+                            }`}
+                          />
+                        </div>
+                      </div>
+                    )}
+                  </Card>
+                ))}
+              </div>
 
-          {/* Add Ingredient Button */}
-          <div className="p-4">
-            <Button
-              onClick={addIngredient}
-              className="w-full bg-white text-black hover:bg-gray-100 border-0 shadow-sm h-14 text-lg font-normal rounded-xl"
-            >
-              <Plus className="w-5 h-5 mr-2" />
-              Add ingredient
-            </Button>
-          </div>
+              {/* Add Ingredient Button */}
+              <div className="p-4">
+                <Button
+                  onClick={addIngredient}
+                  className="w-full bg-white text-black hover:bg-gray-100 border-0 shadow-sm h-14 text-lg font-normal rounded-xl"
+                >
+                  <Plus className="w-5 h-5 mr-2" />
+                  Add ingredient
+                </Button>
+              </div>
 
-          {/* Footer Totals */}
-          <div className="bg-[#312C2A] text-white p-4 space-y-1">
-            <div className="flex justify-between items-center">
-              <span className="text-[26px]">Total weight</span>
-              <span className="text-[26px]">{totalWeight.toFixed(0)} g</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-[26px]">Hydration</span>
-              <span className="text-[26px]">{hydration}%</span>
+              {/* Footer Totals */}
+              <div className="bg-[#312C2A] text-white p-4 space-y-1">
+                <div className="flex justify-between items-center">
+                  <span className="text-[26px]">Total weight</span>
+                  <span className="text-[26px]">{totalWeight.toFixed(0)} g</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-[26px]">Hydration</span>
+                  <span className="text-[26px]">{hydration}%</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
