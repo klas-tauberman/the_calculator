@@ -117,8 +117,8 @@ export default function BakersCalculator() {
     <div className="w-full max-w-2xl mx-auto">
       {/* Desktop View */}
       <div className="hidden md:block">
-        <div className="fixed inset-0 bg-[url('/calculator_bg-2.webp')] bg-cover bg-center bg-no-repeat" />
-        <div className="relative min-h-screen flex items-center justify-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+        <div className="fixed inset-0 bg-[url('/calculator_bg-2.webp')] bg-cover bg-center bg-no-repeat -z-10" />
+        <div className="relative min-h-screen flex items-center justify-center">
           <div className="w-full max-w-xl mx-auto p-8">
             <div className="bg-[#F1E2C7] rounded-3xl shadow-xl overflow-hidden">
               {/* Header */}
