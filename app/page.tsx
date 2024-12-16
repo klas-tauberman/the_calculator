@@ -4,11 +4,7 @@ import { useState } from "react"
 import { Plus, Trash2 } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import Image from 'next/image'
-
-const APP_VERSION = '1.0.2'; // Cache-busting version
+import { Card } from "@/components/ui/card"
 
 interface Ingredient {
   id: string
@@ -241,21 +237,21 @@ export default function BakersCalculator() {
         </div>
       </div>
 
-      {/* Mobile View - Keeping existing mobile implementation unchanged */}
+      {/* Mobile View */}
       <div className="md:hidden min-h-screen bg-[#F1E2C7] pb-32">
         {/* Header */}
         <div className="px-4 py-3 flex items-center gap-2">
-          <div className="w-6 h-6 bg-black rounded-lg flex items-center justify-center"> {/* Updated logo container size */}
-            <Plus className="w-4 h-4 text-white" /> {/* Updated Plus icon size */}
+          <div className="w-6 h-6 bg-black rounded-lg flex items-center justify-center">
+            <Plus className="w-4 h-4 text-white" />
           </div>
-          <h1 className="text-xl font-medium">Baker&apos;s percentage calculator</h1> {/* Update 1 */}
+          <h1 className="text-xl font-medium">Baker&apos;s percentage calculator</h1>
         </div>
 
-        <div className="space-y-4"> {/* New wrapper div */}
+        <div className="space-y-4">
           {/* Ingredients List */}
-          <div className="px-4 space-y-0"> {/* Updated spacing */}
+          <div className="px-4 space-y-0">
             {ingredients.map((ingredient) => (
-              <Card key={ingredient.id} className="p-3 rounded-xl bg-white border border-[#F1E2C7]"> {/* Updated padding */}
+              <Card key={ingredient.id} className="p-3 rounded-xl bg-white border border-[#F1E2C7]">
                 {ingredient.isCustom ? (
                   <div className="flex gap-2">
                     <div className="flex-1 p-3">
@@ -351,7 +347,7 @@ export default function BakersCalculator() {
         </div>
 
         {/* Footer Totals */}
-        <div className="fixed bottom-0 left-0 right-0 bg-[#312C2A] text-white p-4 space-y-1"> {/* Updated background color */}
+        <div className="fixed bottom-0 left-0 right-0 bg-[#312C2A] text-white p-4 space-y-1">
           <div className="flex justify-between items-center">
             <span className="text-[26px]">Total weight</span>
             <span className="text-[26px]">{totalWeight.toFixed(0)} g</span>
