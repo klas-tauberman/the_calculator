@@ -122,7 +122,7 @@ export default function BakersCalculator() {
           <div className="w-full max-w-xl mx-auto p-8">
             <div className="bg-[#F1E2C7] rounded-3xl shadow-xl overflow-hidden">
               {/* Header */}
-              <div className="px-4 py-3 flex items-center gap-2">
+              <div className="px-6 pt-5 pb-5 flex items-center gap-2">
                 <div className="w-6 h-6 bg-black rounded-lg flex items-center justify-center">
                   <Plus className="w-4 h-4 text-white" />
                 </div>
@@ -130,7 +130,7 @@ export default function BakersCalculator() {
               </div>
 
               {/* Ingredients List */}
-              <div className="px-4 space-y-[1px]">
+              <div className="px-6 pb-5 space-y-[1px]">
                 {ingredients.map((ingredient) => (
                   <Card key={ingredient.id} className="p-0 rounded-xl bg-white border-0">
                     {ingredient.isCustom ? (
@@ -216,7 +216,7 @@ export default function BakersCalculator() {
               </div>
 
               {/* Add Ingredient Button */}
-              <div className="p-4">
+              <div className="px-6 pb-5">
                 <Button
                   onClick={addIngredient}
                   className="w-full bg-white text-black hover:bg-gray-100 border-0 shadow-sm h-14 text-lg font-normal rounded-xl"
@@ -227,7 +227,7 @@ export default function BakersCalculator() {
               </div>
 
               {/* Footer Totals */}
-              <div className="bg-[#312C2A] text-white p-4 space-y-1">
+              <div className="bg-[#312C2A] text-white px-6 pt-5 pb-5 space-y-1">
                 <div className="flex justify-between items-center">
                   <span className="text-[26px]">Total weight</span>
                   <span className="text-[26px]">{totalWeight.toFixed(0)} g</span>
@@ -343,7 +343,7 @@ export default function BakersCalculator() {
           <div className="px-4">
             <Button
               onClick={addIngredient}
-              className="w-full bg-white text-black hover:bg-gray-100 border border-[#F1E2C7] shadow-sm h-14 text-lg font-normal rounded-xl"
+              className="w-full bg-white text-black hover:bg-gray-100 border-0 shadow-sm h-14 text-lg font-normal rounded-xl"
             >
               <Plus className="w-5 h-5 mr-2" />
               Add ingredient
@@ -352,7 +352,7 @@ export default function BakersCalculator() {
         </div>
 
         {/* Footer Totals */}
-        <div className="fixed bottom-0 left-0 right-0 bg-[#312C2A] text-white p-4 space-y-1">
+        <div className="fixed bottom-0 left-0 right-0 bg-[#312C2A] text-white px-4 py-10 space-y-1">
           <div className="flex justify-between items-center">
             <span className="text-[26px]">Total weight</span>
             <span className="text-[26px]">{totalWeight.toFixed(0)} g</span>
