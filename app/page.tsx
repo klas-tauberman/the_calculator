@@ -123,9 +123,7 @@ export default function BakersCalculator() {
             <div className="bg-[#F1E2C7] rounded-3xl shadow-xl overflow-hidden">
               {/* Header */}
               <div className="px-6 pt-5 pb-5 flex items-center gap-2">
-                <div className="w-6 h-6 bg-black rounded-lg flex items-center justify-center">
-                  <Plus className="w-4 h-4 text-white" />
-                </div>
+                <img src="/bakers-logo.svg" alt="Baker's Calculator Logo" className="w-6 h-6" />
                 <h1 className="text-xl font-medium">Baker&apos;s percentage calculator</h1>
               </div>
 
@@ -246,9 +244,7 @@ export default function BakersCalculator() {
       <div className="md:hidden min-h-screen bg-[#F1E2C7] pb-32">
         {/* Header */}
         <div className="px-4 py-3 flex items-center gap-2">
-          <div className="w-6 h-6 bg-black rounded-lg flex items-center justify-center">
-            <Plus className="w-4 h-4 text-white" />
-          </div>
+          <img src="/bakers-logo.svg" alt="Baker's Calculator Logo" className="w-6 h-6" />
           <h1 className="text-xl font-medium">Baker&apos;s percentage calculator</h1>
         </div>
 
