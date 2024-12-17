@@ -352,7 +352,7 @@ export default function BakersCalculator() {
         </div>
 
         {/* Footer Totals */}
-        <div className="fixed bottom-0 left-0 right-0 bg-[#312C2A] text-white px-4 py-10 space-y-1">
+        <div className="fixed bottom-0 left-0 right-0 bg-[#312C2A] text-white px-4 py-5 space-y-1">
           <div className="flex justify-between items-center">
             <span className="text-[26px]">Total weight</span>
             <span className="text-[26px]">{totalWeight.toFixed(0)} g</span>
