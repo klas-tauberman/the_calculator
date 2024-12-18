@@ -165,7 +165,9 @@ export default function BakersCalculator() {
                                   value={ingredient.percentage || "0"}
                                   onChange={(e) => updateIngredient(ingredient.id, "percentage", e.target.value)}
                                   onFocus={handleFocus}
-                                  className="text-[32px] h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium"
+                                  className={`text-[32px] h-auto py-0.5 px-0 border-none focus-visible:ring-0 ${
+                                    ingredient.isBase ? "text-gray-400" : "font-medium"
+                                  }`}
                                 />
                               </div>
                             </div>
