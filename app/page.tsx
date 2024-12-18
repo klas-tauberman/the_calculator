@@ -142,7 +142,7 @@ export default function BakersCalculator() {
                                 placeholder="Add name"
                                 value={ingredient.name}
                                 onChange={(e) => updateIngredient(ingredient.id, "name", e.target.value)}
-                                className="text-[32px] h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium placeholder:text-gray-300"
+                                className="!text-[32px] h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium placeholder:text-gray-300"
                               />
                             </div>
                             <div className="border-b border-gray-200 my-3"></div>
@@ -154,7 +154,7 @@ export default function BakersCalculator() {
                                   value={ingredient.weight || "0"}
                                   onChange={(e) => updateIngredient(ingredient.id, "weight", e.target.value)}
                                   onFocus={handleFocus}
-                                  className="text-[32px] h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium"
+                                  className="!text-[32px] h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium"
                                 />
                               </div>
                               <div className="w-px bg-gray-200 h-full" aria-hidden="true"></div>
@@ -165,7 +165,7 @@ export default function BakersCalculator() {
                                   value={ingredient.percentage || "0"}
                                   onChange={(e) => updateIngredient(ingredient.id, "percentage", e.target.value)}
                                   onFocus={handleFocus}
-                                  className={`text-[32px] h-auto py-0.5 px-0 border-none focus-visible:ring-0 ${
+                                  className={`!text-[32px] h-auto py-0.5 px-0 border-none focus-visible:ring-0 ${
                                     ingredient.isBase ? "text-gray-400" : "font-medium"
                                   }`}
                                 />
@@ -192,7 +192,7 @@ export default function BakersCalculator() {
                             value={ingredient.weight || "0"}
                             onChange={(e) => updateIngredient(ingredient.id, "weight", e.target.value)}
                             onFocus={handleFocus}
-                            className="text-[32px] h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium"
+                            className="!text-[32px] h-auto py-0.5 px-0 border-none focus-visible:ring-0 font-medium"
                           />
                         </div>
                         <div className="w-px bg-gray-200 h-full" aria-hidden="true"></div>
@@ -204,7 +204,7 @@ export default function BakersCalculator() {
                             onChange={(e) => updateIngredient(ingredient.id, "percentage", e.target.value)}
                             onFocus={handleFocus}
                             disabled={ingredient.isBase}
-                            className={`text-[32px] h-auto py-0.5 px-0 border-none focus-visible:ring-0 ${
+                            className={`!text-[32px] h-auto py-0.5 px-0 border-none focus-visible:ring-0 ${
                               ingredient.isBase ? "text-gray-400" : "font-medium"
                             }`}
                           />
