@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Reddit_Sans as geistSans, Azeret_Mono as geistMono } from 'next/font/google';
 import "./globals.css";
 
+// This is a single-line comment
+
 export const metadata: Metadata = {
   title: "Baker's Percentage Calculator",
   description: "A simple calculator for baker's percentages",
